@@ -80,3 +80,18 @@ function parse_time(event)
 		document.getElementById(event.target.id).value = `${fframe}`;
 	}
 }
+
+function change_preferance()
+{
+	const color_switch = document.getElementById("color_preference");
+	console.log(color_switch.checked)
+	if (color_switch.checked) {
+		document.body.classList.remove("light");
+		localStorage.setItem("preference", "dark");
+		document.body.classList.add("dark");
+	} else {
+		document.body.classList.add("light");
+		document.body.classList.remove("dark");
+		localStorage.setItem("preference", "light");
+	}
+}
